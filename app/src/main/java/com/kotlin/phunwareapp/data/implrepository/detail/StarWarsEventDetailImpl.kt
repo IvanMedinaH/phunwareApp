@@ -14,6 +14,6 @@ class StarWarsEventDetailImpl(private val apiCall: IServiceAPI) : IStarwarsDetai
         val events = cachedEvents ?: apiCall.getAllEvents() // Fetch from API if not cached
         cachedEvents = events
         val event = events.find { it.id == id }
-        return event?.let { ResultAPI.Success(it) } ?: ResultAPI.Error("Event not found")
+        return event?.let { ResultAPI.Success(it) } ?: ResultAPI.Error.ServerError("Event not found")
     }
 }

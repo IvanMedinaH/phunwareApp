@@ -12,6 +12,8 @@ retrofit ="2.11.0"
 koin="3.5.0"
 logging="5.0.0-alpha.10"
 runtimeLivedata = "1.7.4"
+coil="2.5.0"
+navigationCompose = "2.8.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -29,6 +31,9 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 
+#Compose Navigation
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+
 #Retrofit
 com-squareup-retrofit2= {group="com.squareup.retrofit2",name="retrofit",version.ref="retrofit"}
 com-squareup-retrofit2-gson={ group="com.squareup.retrofit2",name="converter-gson",version.ref="retrofit"}
@@ -41,6 +46,9 @@ io-insert-koin-navigation = { group="io.insert-koin",name="koin-androidx-navigat
 io-insert-koin-compose = {group="io.insert-koin",name="koin-androidx-compose",version.ref="koin" }
 io-insert-koin={group="io.insert-koin",name="koin-android",version.ref="koin"}
 androidx-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "runtimeLivedata" }
+
+#COIL
+io-coil-kt={group="io.coil-kt",name="coil-compose",version.ref="coil"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

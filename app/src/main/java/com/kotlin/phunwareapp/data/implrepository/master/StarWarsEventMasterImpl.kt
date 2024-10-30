@@ -10,7 +10,7 @@ import com.kotlin.phunwareapp.domain.repository.master.IStarwarsMasterRepository
             return  try {
                 ResultAPI.Success( apiCall.getAllEvents() )
             } catch (e:Exception) {
-                ResultAPI.Error(e.message.toString())
+                ResultAPI.Error.ServerError(e.message.toString())
             }
         }
     }

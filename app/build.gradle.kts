@@ -65,6 +65,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.com.squareup.retrofit2)
+    implementation(libs.io.coil.kt)
     implementation(libs.io.insert.koin)
     implementation(libs.io.insert.koin.core)
     implementation(libs.io.insert.koin.compose)
@@ -72,6 +73,7 @@ dependencies {
     implementation(libs.com.squareup.retrofit2.gson)
     implementation(libs.com.squareup.retrofit2.okhttp)
     implementation(libs.androidx.runtime.livedata)
+    implementation(libs.androidx.navigation.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
