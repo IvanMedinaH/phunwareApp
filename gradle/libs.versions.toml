@@ -9,6 +9,8 @@ lifecycleRuntimeKtx = "2.8.6"
 activityCompose = "1.9.3"
 composeBom = "2024.04.01"
 retrofit ="2.11.0"
+koin="3.3.2"
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -25,8 +27,15 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+
 #Retrofit
 com-squareup-retrofit2= {group="com.squareup.retrofit2",name="retrofit",version.ref="retrofit"}
+
+#Koin
+io-insert-koin-core = { group="io.insert-koin",name="koin-core",version.ref="koin" }
+io-insert-koin-workmanager = {group="io.insert-koin",name="koin-androidx-workmanager",version.ref="koin"}
+io-insert-koin-navigation = { group="io.insert-koin",name="koin-androidx-navigation",version.ref="koin" }
+io-insert-koin-compose = {group="io.insert-koin",name="koin-androidx-compose",version.ref="koin" }
 
 
 [plugins]

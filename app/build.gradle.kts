@@ -60,6 +60,9 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.com.squareup.retrofit2)
+    implementation(libs.io.insert.koin.core)
+    implementation(libs.io.insert.koin.compose)
+    implementation(libs.io.insert.koin.navigation)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
