@@ -9,7 +9,7 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface IServiceAPI {
-    @GET("events")
+    @GET("dev-interview-homework/master/feed.json")
     suspend fun getAllEvents(): List<StarWarsEventItem>
 
     @GET("events/{id}")

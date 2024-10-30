@@ -11,6 +11,7 @@ composeBom = "2024.10.00"
 retrofit ="2.11.0"
 koin="3.5.0"
 logging="5.0.0-alpha.10"
+runtimeLivedata = "1.7.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -38,8 +39,8 @@ com-squareup-retrofit2-okhttp= { group="com.squareup.okhttp3",name="logging-inte
 io-insert-koin-core = { group="io.insert-koin",name="koin-core",version.ref="koin" }
 io-insert-koin-navigation = { group="io.insert-koin",name="koin-androidx-navigation",version.ref="koin" }
 io-insert-koin-compose = {group="io.insert-koin",name="koin-androidx-compose",version.ref="koin" }
-
-
+io-insert-koin={group="io.insert-koin",name="koin-android",version.ref="koin"}
+androidx-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "runtimeLivedata" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

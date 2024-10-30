@@ -13,49 +13,39 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 val networkModule = module {
-    single { providesApi(get()) }
-    single<NetworkVerifier> { AndroidNetworkVeriifierImpl(get()) }
-
-
     single { providesParser() }
     single { providesOkHttpClient() }
-    single { (providesRetrofit(get(), get())) }
+    single { providesRetrofit(get(), get()) }
+    single<NetworkVerifier> { AndroidNetworkVeriifierImpl(get()) }
+    single { providesApi(get()) }
 }
 
 
+fun providesRetrofit(converter: Gson, client: OkHttpClient): Retrofit {
+    return Retrofit.Builder()
+        .baseUrl(AccessData.BASE_URL)
+        .client(client)
+        .addConverterFactory(GsonConverterFactory.create(converter))
+        .build()
+}
 
-    fun providesRetrofit(converter: Gson, client: OkHttpClient): Retrofit {
-        return  return Retrofit.Builder()
-            .baseUrl(AccessData.BASE_URL)
-            .client(client)
-            .addConverterFactory(GsonConverterFactory.create(converter))
-            .build()
-    }
-
-    fun providesParser(): Gson = Gson()
-
-    fun providesOkHttpClient(): OkHttpClient = OkHttpClient.Builder()
+fun providesParser(): Gson = Gson()
+fun providesOkHttpClient(): OkHttpClient {
+    return OkHttpClient.Builder()
+        .addInterceptor { chain ->
+            val original = chain.request()
+            val requestBuilder = original.newBuilder()
+                .header("Content-Type", "application/json")
+            chain.proceed(requestBuilder.build())
+        }
         .apply {
-            addInterceptor {chain ->
-                val original = chain.request()
-                val originalHttpUrl = original.url
-
-                // HEADERS
-                val requestBuilder = original.newBuilder()
-                    .header("Content-Type", "application/json") // content type
-
-                val request = requestBuilder.build()
-                chain.proceed(request)
-            }
             if (BuildConfig.DEBUG) {
-                addInterceptor(
-                    HttpLoggingInterceptor().apply {
-                        level = HttpLoggingInterceptor.Level.BODY
-                    }
-                )
+                addInterceptor(HttpLoggingInterceptor().apply {
+                    level = HttpLoggingInterceptor.Level.BODY
+                })
             }
         }
         .build()
-
+}
 
 fun providesApi(retrofit: Retrofit): IServiceAPI = retrofit.create(IServiceAPI::class.java)

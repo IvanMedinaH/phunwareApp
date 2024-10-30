@@ -4,5 +4,5 @@ import com.kotlin.phunwareapp.data.utils.ResultAPI
 import com.kotlin.phunwareapp.domain.model.StarWarsEventItem
 
 interface IStarwarsDetailRepository {
-    suspend fun getEventById(id: Int): ResultAPI<StarWarsEventItem?>
+    suspend fun getEventById(id: Int): ResultAPI<StarWarsEventItem>?
 }
