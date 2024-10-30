@@ -3,6 +3,8 @@ package com.kotlin.phunwareapp
 import android.app.Application
 import com.kotlin.phunwareapp.core.di.networkModule
 import com.kotlin.phunwareapp.core.di.repositoryModule
+import com.kotlin.phunwareapp.core.di.starwarsevents.detail.starwarsDetailRepositoryModule
+import com.kotlin.phunwareapp.core.di.starwarsevents.master.starwarsMasterRepositoryModule
 import com.kotlin.phunwareapp.core.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -21,7 +23,9 @@ class StarWarsApp:Application() {
             modules(
                 networkModule,
                 repositoryModule,
-                viewModelModule
+                viewModelModule,
+                starwarsMasterRepositoryModule,
+                starwarsDetailRepositoryModule
             )
         }
     }

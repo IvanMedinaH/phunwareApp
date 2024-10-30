@@ -1,6 +1,7 @@
 package com.kotlin.phunwareapp.core.di
 
 import com.google.gson.Gson
+import com.kotlin.phunwareapp.BuildConfig
 import com.kotlin.phunwareapp.core.consts.secret.AccessData
 import com.kotlin.phunwareapp.data.local.NetworkVerifier
 import com.kotlin.phunwareapp.data.remote.iservices.IServiceAPI
@@ -13,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 val networkModule = module {
     single { providesApi(get()) }
-    single<NetworkVerifier> { AndroidNetworkVeriifierImpl(get()) } 
+    single<NetworkVerifier> { AndroidNetworkVeriifierImpl(get()) }
 
 
     single { providesParser() }
