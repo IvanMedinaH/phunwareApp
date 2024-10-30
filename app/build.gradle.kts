@@ -22,11 +22,15 @@ android {
 
     buildTypes {
         release {
+            buildConfigField("boolean" ,"ENABLE_LOGGING" ,"false")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+        debug {
+            buildConfigField("boolean" ,"ENABLE_LOGGING" ,"true")
         }
     }
     compileOptions {
@@ -37,6 +41,7 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
+        buildConfig =true
         compose = true
     }
     composeOptions {
@@ -63,6 +68,8 @@ dependencies {
     implementation(libs.io.insert.koin.core)
     implementation(libs.io.insert.koin.compose)
     implementation(libs.io.insert.koin.navigation)
+    implementation(libs.com.squareup.retrofit2.gson)
+    implementation(libs.com.squareup.retrofit2.okhttp)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
