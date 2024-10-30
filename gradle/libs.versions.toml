@@ -1,5 +1,5 @@
 [versions]
-agp = "8.5.1"
+agp = "8.5.2"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -7,9 +7,9 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.6"
 activityCompose = "1.9.3"
-composeBom = "2024.04.01"
+composeBom = "2024.10.00"
 retrofit ="2.11.0"
-koin="3.3.2"
+koin="3.5.0"
 
 
 [libraries]
@@ -33,7 +33,6 @@ com-squareup-retrofit2= {group="com.squareup.retrofit2",name="retrofit",version.
 
 #Koin
 io-insert-koin-core = { group="io.insert-koin",name="koin-core",version.ref="koin" }
-io-insert-koin-workmanager = {group="io.insert-koin",name="koin-androidx-workmanager",version.ref="koin"}
 io-insert-koin-navigation = { group="io.insert-koin",name="koin-androidx-navigation",version.ref="koin" }
 io-insert-koin-compose = {group="io.insert-koin",name="koin-androidx-compose",version.ref="koin" }
 
